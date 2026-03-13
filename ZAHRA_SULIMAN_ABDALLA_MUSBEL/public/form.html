@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FCA Refugee Support Program</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.cdnfonts.com/css/agency-fb" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- Logo and Title -->
+      <div class=" landing-page col-md-5">
+        <div class="landing-container">
+          <div class="logo-container">
+            <img src="images/fca-logo.jpg" alt="FCA Logo" class="fca-logo">
+          </div>
+
+          <h1 class="landing-title">Refugee Support Program</h1>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="col-md-7 form-container-column">
+        <form id="registrationForm" novalidate>
+          <h1 class="form-title">BENEFICIARY REGISTRATION FORM</h1>
+          <!-- Success Alert -->
+          <div id="successAlert" class="success-alert" style="display: none;">
+            <span>Beneficiary registered successfully</span>
+            <button type="button" class="btn-close-alert" onclick="closeSuccessAlert()"
+              aria-label="Close">&times;</button>
+          </div>
+          <div class="form_line row">
+            <div class="form-group col-md-6 ">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" class="form-control" id="firstName" placeholder="Enter your First name" required>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+            <div class="form-group col-md-6 position-relative">
+              <label for="lastName">Last name <span class="required">*</span></label>
+              <input type="text" class="form-control" id="lastName" placeholder="Enter your Last name" required>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+          </div>
+
+          <div class="form_line row">
+            <div class="form-group col-md-6 position-relative">
+              <label for="dob">Date of birth <span class="required">*</span></label>
+              <input type="text" class="form-control" id="dob" placeholder="YYYY / MM / DD" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+            <div class="form-group col-md-6 position-relative">
+              <label for="placeOfBirth">Place of Birth <span class="required">*</span></label>
+              <input type="text" class="form-control" id="placeOfBirth" placeholder="Enter your place of residence"
+                required>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+          </div>
+
+          <div class="form_line row">
+            <div class="col-12 form-group position-relative">
+              <label>Gender</label>
+              <div class="gender-container justify-content-space-between gap-5 ">
+                <div class="form-check d-flex ">
+                  <input class="form-check-input custom-radio" type="radio" name="gender" id="genderMale" value="male">
+                  <label class="form-check-label ms-2 mb-0" for="genderMale">Male</label>
+                </div>
+                <div class="form-check d-flex ">
+                  <input class="form-check-input custom-radio" type="radio" name="gender" id="genderFemale" value="female" checked>
+                  <label class="form-check-label ms-2 mb-0" for="genderFemale">Female</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form_line row">
+            <div class="form-group col-md-6 position-relative">
+              <label for="nationality">Nationality <span class="required">*</span></label>
+              <select class="form-select form-control" id="nationality" required>
+                <option value="" disabled selected>-- Select Nationality --</option>
+                <option value="Ugandan">Ugandan</option>
+                <option value="Kenyan">Kenyan</option>
+                <option value="Tanzanian">Tanzanian</option>
+                <option value="Burundian">Burundian</option>
+                <option value="Rwandese">Rwandese</option>
+                <option value="Somali">Somali</option>
+                <option value="South Sudanese">South Sudanese</option>
+              </select>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+            <div class="form-group col-md-6 position-relative">
+              <label for="maritalStatus">Marital status <span class="required">*</span></label>
+              <select class="form-select form-control" id="maritalStatus" required>
+                <option value="" disabled selected>-- Select Marital status --</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+                <option value="Separated">Separated</option>
+              </select>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+          </div>
+
+          <div class="form_line row">
+            <div class="form-group col-md-6 position-relative">
+              <label for="settlementCamp">Settlement camp <span class="required">*</span></label>
+              <select class="form-select form-control" id="settlementCamp" required>
+                <option value="" disabled selected>-- Select settlement camp --</option>
+                <option value="Gulu settlement camp">Gulu settlement camp</option>
+                <option value="Arua settlement camp">Arua settlement camp</option>
+                <option value="Mbarara settlement camp">Mbarara settlement camp</option>
+                <option value="Kasese settlement camp">Kasese settlement camp</option>
+                <option value="Busia settlement camp">Busia settlement camp</option>
+                <option value="Mbale settlement camp">Mbale settlement camp</option>
+                <option value="Kigezi settlement camp">Kigezi settlement camp</option>
+              </select>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+            <div class="form-group col-md-6 position-relative">
+              <label for="dateOfJoining">Date of joining Settlement camp <span class="required">*</span></label>
+              <input type="text" class="form-control" id="dateOfJoining" placeholder="YYYY / MM / DD" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+              <div class="invalid-feedback">This field is required</div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 d-flex justify-content-end pr-3">
+              <button type="submit" class="btn-submit">Register</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+
+
+      <script src="js/validation.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
