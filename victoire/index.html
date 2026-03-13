@@ -1,122 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beneficiary Registration Form</title>
+    <title>FCA Refugee Support Program</title>
     <link rel="stylesheet" href="style/index.css">
- 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <style>
+        /* Logic for switching views */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Landing Page Styles */
+        #landing-page {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #99cc33;
+            text-align: center;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .logo-circle {
+            background-color: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-circle img {
+            width: 65%;
+            height: auto;
+        }
+
+        .landing-title {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .register-nav-btn {
+            background-color: white;
+            color: #99cc33;
+            border: none;
+            padding: 12px 0;
+            width: 280px;
+            font-size: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: transform 0.2s;
+        }
+
+        .register-nav-btn:hover {
+            transform: scale(1.05);
+            background-color: #f8f8f8;
+        }
+
+        /* Success Alert styling */
+        .success-banner {
+            background-color: #00a651;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-family: sans-serif;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .close-banner {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Validation Error Styles */
+        .invalid-border {
+            border: 2px solid red !important;
+        }
+        .error-text {
+            color: red;
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="layout">
-        <aside class="brand" aria-label="Refugee Support Program">
-            <div class="brand__logo">
-                <div class="brand__circle">
-                    <img class="brand__img" src="logo&colors/fca-logo.jpg" alt="FCA Logo">
-                </div>
-            </div>
-            <div class="brand__title">Refugee Support Program</div>
-        </aside>
 
-        <main class="content" aria-label="Beneficiary registration form">
-            <h1 class="heading1">BENEFICIARY REGISTRATION FORM</h1>
-
-            <form class="form" action="/register" method="post">
-                <div class="grid">
-                    <div class="indentity">
-                        <label class="label" for="firstName">First Name :<span class="req">*</span></label>
-                        <input class="input" id="firstName" name="firstName" type="text" placeholder="Enter your First name" required>
-                    </div>
-
-                    <div class="indentity">
-                        <label class="label" for="lastName">Last name <span class="req">*</span></label>
-                        <input class="input" id="lastName" name="lastName" type="text" placeholder="Enter your Last name" required>
-                    </div>
-
-                    <div class="indentity">
-                        <label class="label" for="dob">Date of birth <span class="req">*</span></label>
-                        <input class="input input--center" id="dob" name="dob" type="date"  placeholder=" dd/ mm / yyyy" required>
-                    </div>
-
-                    <div class="indentity">
-                        <label class="label" for="pob">Place of Birth <span class="req">*</span></label>
-                        <input class="input" id="pob" name="pob" type="text" placeholder="Enter your place of residence" required>
-                    </div>
-
-                    <div class="gender">
-                        <span class="label">Gender</span>
-                        <div class="radioRow" role="radiogroup" aria-label="Gender">
-                            <label class="radio">
-                                <input class="radio__input" type="radio" name="gender" value="Male">
-                                <span class="radio__text">Male</span>
-                            </label>
-                            <label class="radio">
-                                <input class="radio__input" type="radio" name="gender" value="Female" checked>
-                                <span class="radio__text">Female</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="indentity">
-                        <label class="label" for="nationality">Nationality <span class="req">*</span></label>
-                        <div class="select">
-                            <select class="input select__control" id="nationality" name="nationality" required>
-                                <option value="" selected disabled>-- Select Nationality --</option>
-                                <option>Ugandan</option>
-                                <option>Kenyan</option>
-                                <option>Tanzanian</option>
-                                <option>Burundian</option>
-                                <option>rwandese</option>
-                                <option>Somali</option>
-                                <option>South soudanese</option>
-                            </select>
-                            <span class="select__arrow" aria-hidden="true"></span>
-                        </div>
-                    </div>
-
-                    <div class="identity">
-                        <label class="label" for="maritalStatus">Marital status <span class="req">*</span></label>
-                        <div class="select">
-                            <select class="input select__control" id="maritalStatus" name="maritalStatus" required>
-                                <option value="" selected disabled>-- Select Marital status --</option>
-                                <option>Single</option>
-                                <option>Married</option>
-                                <option>Divorced</option>
-                                <option>Widowed</option>
-                                <option>Separeted</option>   
-                            </select>
-                            <span class="select__arrow" aria-hidden="true"></span>
-                        </div>
-                    </div>
-
-                    <div class="identity">
-                        <label class="label" for="settlement">Settlement camp <span class="req">*</span></label>
-                        <div class="select">
-                            <select class="input select__control" id="settlement" name="settlement" required>
-                                <option value="" selected disabled>-- Select settlement camp --</option>
-                                <option>Gulu settlement camp</option>
-                                <option>Arua settlement camp</option>
-                                <option>Mbarara settlement camp</option>
-                                <option>Kasese settlement camp</option>
-                                <option>Busia settlement camp</option>
-                                <option>Kigezi settlement camp</option>
-                            </select>
-                            <span class="select__arrow" aria-hidden="true"></span>
-                        </div>
-                    </div>
-
-                    <div class="identity">
-                        <label class="label" for="dateJoined">Date of joining Settlement camp <span class="req">*</span></label>
-                        <input class="input input--center" id="dateJoined" name="dateJoined" type="date"  placeholder="Year/ Month / Day" required>
-                    </div>
-                </div>
-
-                <div class="actions">
-                    <button class="submit" type="submit">Register</button>
-                </div>
-            </form>
-        </main>
+    <div id="landing-page">
+        <div class="logo-circle">
+            <img src="logo&colors/fca-logo.jpg" alt="FCA Logo">
+        </div>
+        <div class="landing-title">Refugee Support Program</div>
+        <button id="register-nav-btn" class="register-nav-btn">REGISTER</button>
     </div>
-    <script src="index.js"></script>
+
+    <div id="registration-page" class="hidden">
+        <div class="layout">
+            <aside class="brand" aria-label="Refugee Support Program">
+                <div class="brand__logo">
+                    <div class="brand__circle">
+                        <img class="brand__img" src="logo&colors/fca-logo.jpg" alt="FCA Logo">
+                    </div>
+                </div>
+                <div class="brand__title">Refugee Support Program</div>
+            </aside>
+
+            <main class="content" aria-label="Beneficiary registration form">
+                <h1 class="heading1">BENEFICIARY REGISTRATION FORM</h1>
+
+                <div id="success-banner" class="success-banner hidden">
+                    Beneficiary registered successfully
+                    <span class="close-banner" id="close-banner">&times;</span>
+                </div>
+
+                <form class="form" id="refugee-form">
+                    <div class="grid">
+                        <div class="indentity">
+                            <label class="label" for="firstName">First Name :<span class="req">*</span></label>
+                            <input class="input" id="firstName" name="firstName" type="text" placeholder="Enter your First name">
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="indentity">
+                            <label class="label" for="lastName">Last name <span class="req">*</span></label>
+                            <input class="input" id="lastName" name="lastName" type="text" placeholder="Enter your Last name">
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="indentity">
+                            <label class="label" for="dob">Date of birth <span class="req">*</span></label>
+                            <input class="input input--center" id="dob" name="dob" type="date">
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="indentity">
+                            <label class="label" for="pob">Place of Birth <span class="req">*</span></label>
+                            <input class="input" id="pob" name="pob" type="text" placeholder="Enter your place of residence">
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="gender">
+                            <span class="label">Gender</span>
+                            <div class="radioRow" role="radiogroup" aria-label="Gender">
+                                <label class="radio">
+                                    <input class="radio__input" type="radio" name="gender" value="Male">
+                                    <span class="radio__text">Male</span>
+                                </label>
+                                <label class="radio">
+                                    <input class="radio__input" type="radio" name="gender" value="Female" checked>
+                                    <span class="radio__text">Female</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="indentity">
+                            <label class="label" for="nationality">Nationality <span class="req">*</span></label>
+                            <div class="select">
+                                <select class="input select__control" id="nationality" name="nationality">
+                                    <option value="" selected disabled>-- Select Nationality --</option>
+                                    <option>Ugandan</option>
+                                    <option>Kenyan</option>
+                                    <option>Tanzanian</option>
+                                    <option>Burundian</option>
+                                    <option>rwandese</option>
+                                    <option>Somali</option>
+                                    <option>South soudanese</option>
+                                </select>
+                                <span class="select__arrow" aria-hidden="true"></span>
+                            </div>
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="identity">
+                            <label class="label" for="maritalStatus">Marital status <span class="req">*</span></label>
+                            <div class="select">
+                                <select class="input select__control" id="maritalStatus" name="maritalStatus">
+                                    <option value="" selected disabled>-- Select Marital status --</option>
+                                    <option>Single</option>
+                                    <option>Married</option>
+                                    <option>Divorced</option>
+                                    <option>Widowed</option>
+                                    <option>Separeted</option>
+                                </select>
+                                <span class="select__arrow" aria-hidden="true"></span>
+                            </div>
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="identity">
+                            <label class="label" for="settlement">Settlement camp <span class="req">*</span></label>
+                            <div class="select">
+                                <select class="input select__control" id="settlement" name="settlement">
+                                    <option value="" selected disabled>-- Select settlement camp --</option>
+                                    <option>Gulu settlement camp</option>
+                                    <option>Arua settlement camp</option>
+                                    <option>Mbarara settlement camp</option>
+                                    <option>Kasese settlement camp</option>
+                                    <option>Busia settlement camp</option>
+                                    <option>Kigezi settlement camp</option>
+                                </select>
+                                <span class="select__arrow" aria-hidden="true"></span>
+                            </div>
+                            <span class="error-text"></span>
+                        </div>
+
+                        <div class="identity">
+                            <label class="label" for="dateJoined">Date of joining Settlement camp <span class="req">*</span></label>
+                            <input class="input input--center" id="dateJoined" name="dateJoined" type="date">
+                            <span class="error-text"></span>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="submit" type="submit">Register</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // 1. Navigation Logic
+        document.getElementById('register-nav-btn').addEventListener('click', () => {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('registration-page').classList.remove('hidden');
+        });
+
+        // 2. Form Logic
+        const form = document.getElementById('refugee-form');
+        const successBanner = document.getElementById('success-banner');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validate()) {
+                successBanner.classList.remove('hidden');
+                form.reset();
+                resetStyles();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        document.getElementById('close-banner').addEventListener('click', () => {
+            successBanner.classList.add('hidden');
+        });
+
+        // 3. Validation Logic
+        function validate() {
+            let isValid = true;
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time for accurate date-only comparison
+
+            // Required text fields
+            ['firstName', 'lastName', 'pob'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el.value.trim().length < 2) {
+                    applyError(el, "This field is required");
+                    isValid = false;
+                } else {
+                    clearError(el);
+                }
+            });
+
+            // Required selects
+            ['nationality', 'maritalStatus', 'settlement'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el.value) {
+                    applyError(el, "This field is required");
+                    isValid = false;
+                } else {
+                    clearError(el);
+                }
+            });
+
+            // DATE OF BIRTH: Must be in the past
+            const dobInput = document.getElementById('dob');
+            const dobValue = dobInput.value ? new Date(dobInput.value) : null;
+            if (!dobValue || dobValue >= today) {
+                applyError(dobInput, "Date of birth must be before today");
+                isValid = false;
+            } else {
+                clearError(dobInput);
+            }
+
+            // JOINING DATE: Must be today or in the future
+            const dojInput = document.getElementById('dateJoined');
+            const dojValue = dojInput.value ? new Date(dojInput.value) : null;
+            
+            // Adjusted logic: If dojValue is less than today, show error.
+            if (!dojValue || dojValue < today) {
+                applyError(dojInput, "Joining date must be today or after today");
+                isValid = false;
+            } else {
+                clearError(dojInput);
+            }
+
+            return isValid;
+        }
+
+        function applyError(el, msg) {
+            el.classList.add('invalid-border');
+            // Check if next sibling is the error span
+            let errorSpan = el.nextElementSibling;
+            // If it's a select inside a div, find error span outside that div
+            if (!errorSpan || !errorSpan.classList.contains('error-text')) {
+                errorSpan = el.closest('div').querySelector('.error-text');
+            }
+            if (errorSpan) errorSpan.innerText = msg;
+        }
+
+        function clearError(el) {
+            el.classList.remove('invalid-border');
+            let errorSpan = el.nextElementSibling;
+            if (!errorSpan || !errorSpan.classList.contains('error-text')) {
+                errorSpan = el.closest('div').querySelector('.error-text');
+            }
+            if (errorSpan) errorSpan.innerText = "";
+        }
+
+        function resetStyles() {
+            document.querySelectorAll('.invalid-border').forEach(el => el.classList.remove('invalid-border'));
+            document.querySelectorAll('.error-text').forEach(el => el.innerText = "");
+        }
+    </script>
 </body>
+
 </html>
