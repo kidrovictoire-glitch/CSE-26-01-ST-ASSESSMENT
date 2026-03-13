@@ -1,0 +1,314 @@
+/* 
+ * Style Guide Reference:
+ * Fonts: Agency FB, Arial Narrow
+ * Colors: 
+ *  - Pale Green: #99CC32
+ *  - Deep Green: #385723
+ */
+
+
+/* LANDING PAGE STYLES */
+.landing-page {
+    background-color: #99CC32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Agency FB', sans-serif;
+}
+
+.landing-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.logo-container {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fca-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Adding slight padding so logo fits nicely inside the circle */
+    padding: 20px;
+}
+
+.landing-title {
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    margin:10px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-register {
+    display: inline-block;
+    background-color: white;
+    color: #99CC32;
+    width: 200px;
+    text-decoration: none;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 1.5rem;
+    padding: 12px 60px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+    background-color: #f9f9f9;
+}
+
+.btn-register:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* FORM STYLES */
+
+.container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.col-md-6 {
+    padding: 0; 
+}
+
+/* For the right column holding the form */
+.form-container-column {
+    padding: 40px 60px;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.form-title {
+    font-family: 'Agency FB', sans-serif;
+    color: #385723;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+}
+
+/* Adjust the user's HTML class for rows to have spacing */
+.form_line {
+    margin-bottom: 20px !important;
+}
+
+/* Add gaps between columns in the same row */
+.form_line .form-group {
+    padding: 0 10px;
+}
+
+.form-group label {
+    font-family: 'Agency FB', sans-serif;
+    color: #385723;
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+.form-group input{
+    border: 1px solid #99CC32;
+    width: 100%;
+}
+  
+.form-group input::placeholder{
+    color: #c8c7c7;
+    font-size: 20px;
+    font-family: 'Arial Narrow', sans-serif;
+    text-align: center;
+}
+
+.required {
+    color: red;
+}
+
+.form-control, .form-select {
+    border: 1px solid #99CC32;
+    width: 100%;
+    height: 60px;
+    border-radius: 0!important; /* Square edges like design */
+    padding: 12px;
+    color: #333;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 1.1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2399CC32'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem center !important;
+    background-size: 2rem !important;
+}
+
+.form-control::placeholder, .form-select:invalid {
+    color: #d0cfcf;
+    font-family: 'Arial Narrow', sans-serif;
+    text-align: center;
+}
+.form-select:invalid {
+ border: 1px solid #99CC32;
+}
+
+.form-select option {
+    color: #333;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.15rem rgba(153, 204, 50, 0.25);
+    border-color: #99CC32;
+}
+
+.gender-container {
+    border: 1px solid #99CC32;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.custom-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #385723;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #99CC32;
+    
+    
+}
+
+.custom-radio:checked {
+    background-color: transparent !important;
+   
+}
+
+.custom-radio:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #385723;
+    border-radius: 50%;
+}
+
+.form-check-label {
+    font-size: 1.1rem;
+    color: #333;
+    padding-top: 2px;
+    font-family: 'Arial Narrow', sans-serif;
+    margin-left: 10px;
+}
+.btn-submit {
+    justify-content: end;
+    text-align: center;
+    background-color: #99CC32;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    font-family: 'Arial Narrow', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #8bbd28;
+    color: white;
+}
+
+/* VALIDATION ERROR STYLES */
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: red !important;
+    background-image: none !important;
+}
+
+.form-control.is-valid, .form-select.is-valid {
+    border-color: #385723 !important;
+    background-image: none !important;
+}
+
+.invalid-feedback {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: right; /* Aligned to the right as per design */
+    font-family: 'Arial Narrow', sans-serif;
+    width: 100%;
+}
+
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* SUCCESS ALERT STYLES */
+.success-alert {
+    background-color: #00b050; /* Matches exact green from the image */
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 3px;
+}
+
+.success-alert span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.btn-close-alert {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.btn-close-alert:hover {
+    color: #e0e0e0;
+}
